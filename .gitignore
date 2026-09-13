@@ -1,0 +1,31 @@
+# Root gitignore
+.DS_Store
+Thumbs.db
+*.log
+
+# Environment variables
+.env
+.env.*
+!.env.example
+
+# Dependencies
+node_modules/
+vendor/
+
+# Build outputs (uncomment jika ingin build di server hosting via CI/CD / SSH)
+# Kalau hosting shared tanpa nodejs, public/build dan build/ bisa di-include.
+# Sesuai konfigurasi sub-project:
+jasmine-backend/vendor/
+jasmine-backend/node_modules/
+jasmine-backend/.env
+jasmine-backend/.env.*
+!jasmine-backend/.env.example
+jasmine-backend/storage/*.key
+jasmine-backend/public/hot
+jasmine-backend/public/storage
+
+jasmine-frontend/node_modules/
+jasmine-frontend/.svelte-kit/
+jasmine-frontend/.env
+jasmine-frontend/.env.*
+!jasmine-frontend/.env.example
