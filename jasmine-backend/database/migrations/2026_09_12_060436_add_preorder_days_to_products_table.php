@@ -7,9 +7,11 @@ use Illuminate\Support\Facades\Schema;
 return new class extends Migration {
     public function up(): void
     {
-        Schema::table('products', function (Blueprint $table) {
-            $table->unsignedSmallInteger('preorder_days')->nullable()->default(14)->after('stock_status');
-        });
+        if (!Schema::hasColumn('products', 'preorder_days')) {
+            Schema::table('products', function (Blueprint $table) {
+                $table->unsignedSmallInteger('preorder_days')->nullable()->default(14)->after('stock_status');
+            });
+        }
     }
 
     public function down(): void
