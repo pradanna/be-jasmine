@@ -1,7 +1,7 @@
 export const API_BASE_URL = 
   (typeof import.meta !== 'undefined' && import.meta.env && import.meta.env.VITE_API_BASE_URL) 
     ? import.meta.env.VITE_API_BASE_URL 
-    : 'http://localhost:8080/api/v1';
+    : 'https://admin-jasmine.pradanamahendra.site/api/v1';
 
 export class HttpClient {
   constructor(private baseUrl: string = API_BASE_URL) {}
